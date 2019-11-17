@@ -34,7 +34,7 @@ namespace TableParser
         [TestCase("'\\'a\\''", new[] { "'a'" })]
         [TestCase("", new string[] { })]
         [TestCase("\"\\\"a\\\"\"", new[] { "\"a\"" })]
-        [TestCase("a'b c d'f", new[] { "a", "b c d", "f"})]
+        [TestCase("a'b c d'f", new[] { "a", "b c d", "f" })]
         public static
     void RunTests(string input, string[] expectedOutput)
         {
@@ -48,14 +48,14 @@ namespace TableParser
         {
             var parsedTokens = new List<Token>();
             int i = 0;
-            while (i<line.Length - 1)
+            while (i < line.Length)
             {
                 if (char.IsWhiteSpace(line[i]))
                     i++;
                 else if (line[i] == '\'' || line[i] == '\"')
                 {
                     parsedTokens.Add(ReadQuotedField(line, i));
-                    i = parsedTokens[parsedTokens.Count -1].GetIndexNextToToken();
+                    i = parsedTokens[parsedTokens.Count - 1].GetIndexNextToToken();
                 }
                 else if (line[i] == '\\' || char.IsLetterOrDigit(line[i]))
                 {
@@ -65,15 +65,15 @@ namespace TableParser
             }
             return parsedTokens;
         }
-        
+
         private static Token ReadField(string line, int startIndex)
         {
             var i = startIndex;
             var valueOfToken = new StringBuilder();
-            while (!char.IsWhiteSpace(line[i]) && i < line.Length - 1 && line[i] != '\'' && line[i] != '\"')
-            { 
-                    valueOfToken.Append(line[i]);
-                    i++;
+            while (i < line.Length && !char.IsWhiteSpace(line[i]) && line[i] != '\'' && line[i] != '\"')
+            {
+                valueOfToken.Append(line[i]);
+                i++;
             }
             return new Token(valueOfToken.ToString(), startIndex, i - startIndex);
         }
@@ -82,8 +82,10 @@ namespace TableParser
         {
             int i = startIndex + 1;
             var valueOfToken = new StringBuilder();
-            while (line[startIndex] != line[i] && i<line.Length - 1)
+            while (i < line.Length)
             {
+                if (line[startIndex] == line[i])
+                    return new Token(valueOfToken.ToString(), startIndex, i + 1 - startIndex);
                 if (line[i] == '\\')
                 {
                     valueOfToken.Append(line[i + 1]);
@@ -95,7 +97,7 @@ namespace TableParser
                     i++;
                 }
             }
-            return new Token(valueOfToken.ToString(), startIndex, i + 1 - startIndex);
+            return new Token(valueOfToken.ToString(), startIndex, i - startIndex);
         }
     }
 }
