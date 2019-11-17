@@ -1,0 +1,12 @@
+C:\Users\PnnK\Desktop\Пограммирование\БольИСтрадания\bin\Debug\data.txt
+C:\Users\PnnK\Desktop\Пограммирование\БольИСтрадания\bin\Debug\TableParser.exe.config
+C:\Users\PnnK\Desktop\Пограммирование\БольИСтрадания\bin\Debug\TableParser.exe
+C:\Users\PnnK\Desktop\Пограммирование\БольИСтрадания\bin\Debug\TableParser.pdb
+C:\Users\PnnK\Desktop\Пограммирование\БольИСтрадания\bin\Debug\nunit.framework.dll
+C:\Users\PnnK\Desktop\Пограммирование\БольИСтрадания\obj\Debug\table-parser.csprojAssemblyReference.cache
+C:\Users\PnnK\Desktop\Пограммирование\БольИСтрадания\obj\Debug\TableParser.ParserMainForm.resources
+C:\Users\PnnK\Desktop\Пограммирование\БольИСтрадания\obj\Debug\TableParser.Properties.Resources.resources
+C:\Users\PnnK\Desktop\Пограммирование\БольИСтрадания\obj\Debug\table-parser.csproj.GenerateResource.cache
+C:\Users\PnnK\Desktop\Пограммирование\БольИСтрадания\obj\Debug\table-parser.csproj.CopyComplete
+C:\Users\PnnK\Desktop\Пограммирование\БольИСтрадания\obj\Debug\TableParser.exe
+C:\Users\PnnK\Desktop\Пограммирование\БольИСтрадания\obj\Debug\TableParser.pdb
